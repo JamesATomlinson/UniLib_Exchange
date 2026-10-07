@@ -1,2 +1,12 @@
+[project]
+name = "cur_exchange"
+version = "0.1.0"
+requires-python = ">=3.12"
+dependencies = [
+  "Flask",
+  "numpy",
+]
+
+
 [tool.vercel]
 entrypoint = "currency_index:app"
