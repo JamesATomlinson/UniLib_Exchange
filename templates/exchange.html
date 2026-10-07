@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+    <html>
+        <head>
+            <title>The Exchange</title>
+            
+        </head>
+
+        <body>
+            <h1>Welcome to the exchange</h1>
+            <p>To find the exchange rate from your currency to the desired currency, 
+                please use the drop down menus</p>
+            <form action="/" method="post">
+                <label for="cur1">Choose an input currency</label>
+                <select id="cur1" name="cur1">
+                    {% for key, value in data.items() %}
+                        <option value="{{ key }}">{{ key }} - {{ value }}</option>
+                    {% endfor %}
+                </select>
+                <br><br>
+                
+                <label for="amo">Type in how much you want to convert</label>
+                    <input type="text" id="amo" name="amo">
+                
+                <br><br>
+                <label for="cur2">Choose the currency you want to convert it to</label>
+                <select id="cur2" name="cur2">
+                    {% for key, value in data.items() %}
+                        <option value="{{ key }}">{{ key }} - {{ value }}</option>
+                    {% endfor %}
+                </select>
+                <br>
+                <input type="submit" id="post" name="post" value="Submit">
+            </form>
+            <br><br><br>
+            {% if answer is defined %}
+                <p>{{ answer }}</p>
+            {% endif %}
+        </body>
+    </html>
