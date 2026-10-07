@@ -1,2 +1,2 @@
 [tool.vercel]
-entrypoint = "currency_index.py"
+entrypoint = "currency_index:app"
